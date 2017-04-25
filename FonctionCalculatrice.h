@@ -17,7 +17,7 @@ int i,j;
     if(chaine[0]!='/' && chaine[0]!='*')
         for(i=0;chaine[i];i++)
         {
-            if(rech_1erPosCar("0123456789/*-+%",chaine[i])==-1)
+            if(rech_1erPosCar("0123456789/*-+% ",chaine[i])==-1)
                 return 0;
         }
     else
@@ -36,3 +36,12 @@ int i,j;
 return 1;
 }
 
+int convertVersEntier(char chaine[])//Fonction qui permet de convertir un nombre de type char a un nombre de type int
+{
+    int i,nombre=0;
+    for(i=0; chaine[i]; i++)
+    {
+        nombre=nombre*10+chaine[i]-48;
+    }
+    return nombre;
+}
