@@ -45,3 +45,21 @@ int convertVersEntier(char chaine[])//Fonction qui permet de convertir un nombre
     }
     return nombre;
 }
+
+int Rech_Op(char Chaine[], char Car)
+{
+int i,cpt=0;
+    for(i=0;Chaine[i];i++)
+    {
+        if(Chaine[i]=='/' || Chaine[i]=='*' || Chaine[i]=='+' || Chaine[i]=='-')
+        {
+            cpt++;
+            if(Chaine[i]==Car)
+            {
+                Chaine[i]=0;
+                return cpt;
+            }
+        }
+    }
+return -1;
+}
